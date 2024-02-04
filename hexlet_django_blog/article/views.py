@@ -1,7 +1,13 @@
 from django.shortcuts import render
+from django.views import View
 
 
-def index(request):
-    return render(request, 'articles/index.html', context={
-        'name': 'article',
-    })
+class IndexView(View):
+    template_name = 'articles/index.html'
+
+    def get(self, request):
+        return render(
+            request,
+            self.template_name,
+            context={'name': 'article'}
+        )
