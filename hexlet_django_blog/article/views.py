@@ -1,13 +1,18 @@
-from django.shortcuts import render
-from django.views import View
+from django.http import HttpResponse
+# from django.views import View
+# from django.shortcuts import render
 
 
-class IndexView(View):
-    template_name = 'articles/index.html'
+def index(request, article_id, tags):
+    return HttpResponse(f'Статья номер {article_id}. Тег {tags}')
 
-    def get(self, request):
-        return render(
-            request,
-            self.template_name,
-            context={'name': 'article'}
-        )
+
+# class IndexView(View):
+#     template_name = 'articles/index.html'
+
+#     def get(self, request):
+#         return render(
+#             request,
+#             self.template_name,
+#             context={'name': 'article'}
+#         )
