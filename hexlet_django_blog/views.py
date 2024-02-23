@@ -3,7 +3,6 @@ from django.shortcuts import render
 # from django.urls import reverse
 from django.views.generic import TemplateView
 
-
 # def index(request):
 #     return redirect(reverse('article',
 #                             kwargs={'tags': 'python', 'article_id': 42}))
